@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Your Numbers</title>
+  <style>
+    body { font-family: system-ui; max-width: 720px; margin: 40px auto; padding: 0 16px; }
+    .pill { display: inline-flex; align-items: center; justify-content: center;
+            width: 52px; height: 52px; border-radius: 999px; border: 1px solid #ddd;
+            margin-right: 10px; font-weight: 700; }
+    .power { border-width: 2px; }
+    code { background: #f5f5f5; padding: 2px 6px; border-radius: 8px; }
+    a { display: inline-block; margin-top: 20px; }
+  </style>
+</head>
+<body>
+  <h1>Your Numbers</h1>
+
+  <p><b>Name:</b> {{ first }} {{ last }}</p>
+  <p><b>Payload:</b> <code>{{ payload[:120] }}{% if payload|length > 120 %}...{% endif %}</code></p>
+
+  <p><b>Seed preview:</b> <code>{{ seed_preview }}</code></p>
+
+  <h2>Numbers</h2>
+  <div>
+    {% for n in numbers %}
+      <span class="pill">{{ n }}</span>
+    {% endfor %}
+    <span class="pill power">PB {{ powerball }}</span>
+  </div>
+
+  <a href="/">↩︎ Make another</a>
+</body>
+</html>

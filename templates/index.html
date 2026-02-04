@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lotto Generator</title>
+  <style>
+    body { font-family: system-ui; max-width: 720px; margin: 40px auto; padding: 0 16px; }
+    input, textarea { width: 100%; padding: 12px; margin: 8px 0 16px; border-radius: 12px; border: 1px solid #ddd; }
+    button { padding: 12px 16px; border-radius: 12px; border: 0; cursor: pointer; }
+    .row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    @media (max-width: 640px) { .row { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <h1>Lotto Number Generator </h1>
+  <p>Same inputs will give you the same numbers, we are using a propriotary Algorythm to generate these numbers.</p>
+
+  <form method="POST" action="/generate">
+    <div class="row">
+      <div>
+        <label>First name</label>
+        <input name="first_name" placeholder="Jonny" required />
+      </div>
+      <div>
+        <label>Last name</label>
+        <input name="last_name" placeholder="Appleseed" required />
+      </div>
+    </div>
+
+    <label>Magic Spell</label>
+    <textarea name="payload" rows="6" placeholder="throw your spell here..." required></textarea>
+
+    <button type="submit">Generate Numbers </button>
+  </form>
+</body>
+</html>
