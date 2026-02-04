@@ -1,11 +1,6 @@
 # lotto_engine.py
 
 class LottoEngine:
-    """
-    Deterministic lottery generator WITHOUT hashing.
-    Converts text to an integer seed using char codes + mixing,
-    then uses a simple PRNG to draw numbers.
-    """
 
     def __init__(self, normal_ball_max=69, normal_ball_count=5, power_ball_max=26):
         self.normal_ball_max = normal_ball_max
